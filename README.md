@@ -1,18 +1,20 @@
- Coursera Machine Learning Programming Assignments
+Coursera Machine Learning Programming Assignments
 ==============
 
 Environment: GNU Octave, version 4.0.3
 
 **Course Content**
 
-- Week 1
+Week 1
+--------------
 Introduction
 
 Linear Regression with One Variable
 
 Linear Algebra Review
 
-- Week 2 
+Week 2 
+--------------
 Linear Regression with Multiple Variables
 
 Octave/Matlab Tutorial
