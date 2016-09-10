@@ -16,10 +16,11 @@ function plotData(x, y)
 
 figure; % open a new figure window
 
-plot(x, y, 'rx', 'MarkerSize', 10);
-xlabel('Population of City in 10,000s');
-ylabel('Profit in $10,000s');
-xlim([4 24]);
+plot(x, y, 'rx', 'MarkerSize', 10); % Plot the data
+ylabel('Profit in $10,000s'); % Set the y-axis label
+xlabel('Population of City in 10,000s'); % Set the x-axis label
+
+xlim([4 24]); 
 xbounds = xlim();
 set(gca,'xtick',[xbounds(1):2:xbounds(2)]);
 
