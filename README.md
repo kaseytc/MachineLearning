@@ -1,7 +1,7 @@
 Coursera Machine Learning Programming Assignments
 ==============
 
-Environment: GNU Octave, version 4.0.3
+- Environment: GNU Octave, version 4.0.3
 
 Week 1
 --------------
