@@ -1,4 +1,3 @@
-%
 %% Machine Learning Online Class
 %  Exercise 1: Linear regression with multiple variables
 %
@@ -83,22 +82,40 @@ X = [ones(m, 1) X];
 fprintf('Running gradient descent ...\n');
 
 % Choose some alpha value
-alpha = 0.01;
-num_iters = 400;
+alpha = 0.1;
+num_iters = 50;
+alpha1 = 0.3;
+alpha2 = 0.03;
+alpha3 = 0.01;
 
 % Init Theta and Run Gradient Descent 
 theta = zeros(3, 1);
-[theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters);
+[theta0, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters);
+[theta1, J1] = gradientDescentMulti(X, y, theta, alpha1, num_iters);
+[theta2, J2] = gradientDescentMulti(X, y, theta, alpha2, num_iters);
+[theta3, J3] = gradientDescentMulti(X, y, theta, alpha3, num_iters);
 
-% Plot the convergence graph
+% Plot the convergence graph for several learning rates on the same figure
 figure;
-plot(1:numel(J_history), J_history, '-b', 'LineWidth', 2);
+plot(1:numel(J_history), J_history, '-g', 'LineWidth', 2);
 xlabel('Number of iterations');
 ylabel('Cost J');
+xlim([0 50]); 
+xbounds = xlim();
+set(gca,'xtick',[xbounds(1):5:xbounds(2)]);
+% ylim([0 7*(10^10)]); 
+% ybounds = ylim();
+% set(gca,'ytick',[ybounds(1):(10^10):ybounds(2)]);
+hold on;
+plot(1:50, J1(1:50), '-b', 'LineWidth', 2);
+plot(1:50, J2(1:50), '-r', 'LineWidth', 2);
+plot(1:50, J3(1:50), '-k', 'LineWidth', 2);
+legend('alpha = 0.1', 'alpha = 0.3', 'alpha = 0.03', 'alpha = 0.01');
+
 
 % Display gradient descent's result
-fprintf('Theta computed from gradient descent: \n');
-fprintf(' %f \n', theta);
+fprintf('Theta computed from the best gradient descent: \n');
+fprintf(' %f \n', theta0);
 fprintf('\n');
 
 % Estimate the price of a 1650 sq-ft, 3 br house
@@ -107,10 +124,10 @@ fprintf('\n');
 % not need to be normalized.
 % price = 0; % You should change this
 
-new = [1650 3];
-new = (new - mu) ./ sigma;
-new = [ones(1, 1) new];
-price = new * theta;
+newData = [1650 3];
+newData = (newData - mu) ./ sigma;
+newData = [ones(1, 1) newData];
+price = newData * theta0;
 
 % ============================================================
 
@@ -156,9 +173,9 @@ fprintf('\n');
 % ====================== YOUR CODE HERE ======================
 %price = 0; % You should change this
 
-new = [1 1650 3];
+newData = [1 1650 3];
 
-price = new * theta;
+price = newData * theta;
 
 % ============================================================
 
