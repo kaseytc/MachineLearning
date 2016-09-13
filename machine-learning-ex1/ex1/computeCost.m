@@ -14,8 +14,7 @@ J = 0;
 %               You should set J to the cost.
 
 h = X * theta;
-J = (1/(2*m)) * sum(power((h - y), 2)); % the cost function
-
+J = (1/(2*m)) * ((h - y)'*(h - y)); % the cost function
 
 % =========================================================================
 
