@@ -20,14 +20,11 @@ grad = zeros(size(theta));
 
 [J, grad] = costFunction(theta, X, y);
 
+% should not regularize the parameter theta_0
+thetaIgnoreZero = [0; theta(2:length(theta))]; 
 
-thetaIgnoreZero = [0; theta(2:length(theta))];
-
-
-J = J + (lambda/(2*m))*sum(thetaIgnoreZero .^ 2 );
-grad = grad .+ (lambda / m)*thetaIgnoreZero;
-
-
+J = J + (lambda/(2*m)) * (thetaIgnoreZero' * thetaIgnoreZero); % cost function
+grad = grad .+ (lambda / m) * thetaIgnoreZero; % gradient
 
 
 % =============================================================
