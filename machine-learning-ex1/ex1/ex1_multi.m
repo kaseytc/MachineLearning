@@ -112,7 +112,6 @@ plot(1:50, J2(1:50), '-r', 'LineWidth', 2);
 plot(1:50, J3(1:50), '-k', 'LineWidth', 2);
 legend('alpha = 0.1', 'alpha = 0.3', 'alpha = 0.03', 'alpha = 0.01');
 
-
 % Display gradient descent's result
 fprintf('Theta computed from the best gradient descent: \n');
 fprintf(' %f \n', theta0);

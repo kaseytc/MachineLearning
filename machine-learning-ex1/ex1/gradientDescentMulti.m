@@ -16,8 +16,7 @@ for iter = 1:num_iters
     % Hint: While debugging, it can be useful to print out the values
     %       of the cost function (computeCostMulti) and gradient here.
     %
-    
-    
+       
     h = X * theta;
     
     % update theta
@@ -25,7 +24,6 @@ for iter = 1:num_iters
     
     % print out the values of the cost function to check convergence
     printf('cost function: %f \n', computeCostMulti(X, y, theta));
-
 
     % ============================================================
 
