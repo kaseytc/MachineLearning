@@ -17,7 +17,6 @@ for iter = 1:num_iters
     %       of the cost function (computeCost) and gradient here.
     %
 
-    
     h = X * theta;
     
     % update theta
@@ -25,7 +24,6 @@ for iter = 1:num_iters
     
     % print out the values of the cost function to check convergence
     printf('cost function: %f \n', computeCost(X, y, theta));
-    
 
     % ============================================================
 
